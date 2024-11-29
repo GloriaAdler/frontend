@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+.header > h1 {
+  font-family: "Covered By Your Grace", serif;
+  font-weight: 50px;
+  font-size: 150px;
+  font-style: normal;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cars-link {
+  font-size: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 0px;
+  padding: 20px;
+}
+
+body {
+  background-color: rgb(218, 207, 207);
+}
+
+p {
+  color: rgb(12, 38, 18);
+  font-size: 25px;
+}
+
+.car-gallery {
+  width: auto;
+  min-width: 600px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 8px;
+  border-color: rgb(145, 140, 134);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  align-content: start;
+}
+
+.car-cart > img {
+  min-width: 500px;
+  min-height: 300px;
+}
+
+.car-cart {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: rgb(145, 140, 134);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 550px;
+  background-color: antiquewhite;
+}

@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animal-gallery {
+  width: 100%;
+  min-height: 900px; /*минимальная высота рамки 500, но если карточки не влезут, она автоматически растянется*/
+  padding: 15px 0px;
+  border: 1.5px solid; /*solid - сплошная граница*/
+  border-radius: 5px;
+  /* задаем flex для родителя позиционируемых элементов */
+  display: flex;
+  /*промежуток между flex элементами*/
+  gap: 10px;
+  /* центровать flex элементы по главной оси */
+  justify-content: center;
+  /* сместить элементы к правому краю */
+  /* justify-content: end; */
+  /* разделили равномерно свободное пространство между элементами */
+  /*justify-content: space-between;*/
+  /* align-items управляет поведением flex элементов по поперечной оси */
+  align-items: start;
+  /*перенос карточек на новые строки*/
+  flex-wrap: wrap;
+  /*align-content - отвечает за положение карточек после переноса на другую строку через flex-wrap*/
+  align-content: start;
+}
+
+/* селектор для всех картинки внутри .animal-card */
+.animal-cart > img {
+  /* .animal-cart - контейнер, > img - если: от класса "родителя", если ты img, то будешь иметь следующие настройки. > - если этой связующей галочки не поставить, то настройки коснуться всех картинок*/
+  width: 300px;
+}
+
+/* селектор для контейнера с данными по животному */
+
+.animal-cart {
+  display: flex;
+  flex-direction: column; /*поменяли направление во флекс-контейнере, теперь главная ось отвечает за вертикаль*/
+  /*если изменен flex-direction на column, то align-items*/
+  align-items: center;
+
+  justify-content: center;
+  height: 300px;
+  width: 350px;
+  background-color: bisque;
+}
