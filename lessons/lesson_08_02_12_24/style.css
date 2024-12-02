@@ -1,0 +1,93 @@
+body{
+    margin: 0; /*по умолчанию маржины тела сайта 8px и чтобы не было отступа, нужно установит 0*/
+    display: flex; /*делаем из тела контейнер и располагаем элементы друг за другом*/
+    flex-direction: column;
+    min-height: 100vh; /*100vh это 100% обрасти видимости окна браузера, это значит, что подвал будет в самом низу экрана, т.к. бади будет всегда в 100% видимости.*/
+}
+
+h1{
+    color: forestgreen;
+}
+
+header{
+    position: sticky; /*место где приклеется чердак*/
+    top: 0px; /* значение для координат. максимально верхняя часть страницы*/
+    height: 80px;
+    background-color: forestgreen;
+
+
+}
+
+main{
+    padding: 0px 30px ;
+    flex: 1; /*настройка для флекс элемента, чтоб он растянулся по всей высоте контейнера родителя*/
+
+}
+
+footer{
+    height: 50px;
+    background-color: lightgray;
+    
+
+}
+
+.grid-gallery{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*шаблон для колонок (сетки). простой вариант просто задать числами кол-во колонок, сложный сделать адаптировано - настройками auto-fill, где 200px ширина колонки, 1fr - максимальная ширина, которая, если будет достигнута, то будет помещена новая колонка*/
+    /*grid-auto-rows: 80px;*/ /*фиксированная высота секции, теперь все элементы контейнера будут высотой 80px*/
+}
+
+.grid-gallery a { /*эффекты при наведении на ссылку*/
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.grid-gallery a:hover { /*эффекты при наведении на ссылку*/
+    transform: scale(1.1) ;
+    background-color: white;
+    
+}
+
+.grid-gallery section { /*> говорит о том, что только section будет иметь эти свойства, если её убрать, то вс-ва распространятся на все элементы section*/ 
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*background-color: lightsalmon;*/
+}
+
+.grid-gallery div{
+    height: 120px;//*фиксировано заданная высота картинки*/
+}
+
+.grid-gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*чтобы картинка не деформировалась, не нужные части просто обрезаются*/
+}
+
+@media (max-width: 450px) {
+    header {
+        background-color: green;
+    }
+
+    .grid-gallery div {
+        height: 170px;
+    }
+
+}
+
+@media (max-width: 669px) {
+    header {
+        background-color: greenyellow;
+    }
+
+    .grid-gallery div {
+        height: 200px;
+    }
+
+}
+
+
+

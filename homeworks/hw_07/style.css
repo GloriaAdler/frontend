@@ -5,7 +5,7 @@ body::before {
   position: absolute;
   top: 0;
   width: 100%; /* Ширина страницы - 100% экрана */
-  height: 25%; /*высота верхнего фона*/
+  height: 35%; /*высота верхнего фона*/
   background-image: url(https://i.pinimg.com/originals/fe/f5/06/fef5061e04ae37e7d596570b48cfccbf.png);
   background-repeat: no-repeat; /*картинка вставляется только один раз без повторов*/
   background-position: top; /* Картинка центрируется */
@@ -16,7 +16,7 @@ body {
 }
 
 .title {
-  height: 150px;
+  height: 250px;
   margin-top: 50px;
 }
 
