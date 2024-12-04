@@ -222,6 +222,7 @@ button{
   background-color: red;
   border: none;
   margin: 4px 24px auto 6px;
+  cursor: pointer;
 }
 
 .menu_blocks {
