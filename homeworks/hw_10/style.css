@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: rgb(206, 242, 242);
+}
+
+h1 {
+  font-family: "Sour Gummy", serif;
+  margin: 20px;
+}
+
+#text {
+  font-family: cursive
+  
+}
+
+#magic-btn {
+  background-color: #f7c815;
+  color: white;
+  font-size: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+}
+#magic-btn-2 {
+  font-size: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+}
+
+.second-btn {
+  font-size: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+}
+
+#text {
+  font-size: 30px;
+  margin: 20px;
+}
+
+button {
+  cursor: pointer;
+}

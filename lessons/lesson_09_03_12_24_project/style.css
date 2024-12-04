@@ -1,0 +1,369 @@
+html, body {
+  overflow-x: hidden; 
+  margin: 0; padding: 0;
+  width: 100%;
+  height: 100%; }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: F5F5F5;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.main-img{
+  height:450px;
+  background-size: cover;
+  background-image: url("./img/shutterstock_1549382906.jpg");
+  background-repeat: no-repeat;
+}
+.main-img h1 {
+  position: relative;
+  left: 110px;
+  top: 348px;
+  font-size: 48px;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.title{
+  position: relative;
+  left: 140px;
+  top:100px
+}
+.gallery-container{
+  display: flex;
+  justify-content: center;
+}
+.copyright-icon {
+  font-size: 10px;
+  margin: 0 0 8px 0;
+}
+.background-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fa-solid {
+  justify-content: center;
+  size: 100px;
+}
+.gallery {
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  justify-content: center;
+  background-color: F5F5F5;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
+  grid-auto-rows: auto;
+  margin: 100px 140px 150px 140px;
+}
+.card-item{
+  background-color: F5F5F5;
+}
+.photo{
+  position: relative;
+  height: 235px;
+  background-size: cover
+}
+p {
+  margin: 10px 0 0 0;
+}
+.P0 {
+  background-image: url("./img/1.jpg");
+}
+.P1 {
+  background-image: url("./img/2.jpg");
+}
+.P2 {
+  background-image: url("./img/3.jpg");
+}
+.P3 {
+  background-image: url("./img/4.jpg");
+}
+.P4 {
+  background-image: url("./img/5.jpg");
+}
+.P5 {
+  background-image: url("./img/6.jpg");
+}
+.P6 {
+  background-image: url("./img/7.jpg");
+}
+.P7 {
+  background-image: url("./img/8.jpeg");
+}
+.P8 {
+  background-image: url("./img/9.jpg");
+}
+.P9 {
+  background-image: url("./img/10.jpg");
+}
+.P10 {
+  background-image: url("./img/11.jpg");
+}
+.P11 {
+  background-image: url("./img/12.jpg");
+}
+.P12 {
+  background-image: url("./img/13.jpg");
+}
+.P13 {
+  background-image: url("./img/14.jpg");
+}
+.P14 {
+  background-image: url("./img/15.jpg");
+}
+.P15 {
+  background-image: url("./img/16.jpg");
+}
+
+
+header {
+  position: sticky;
+  z-index: 1000;
+  top: 0px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 2fr 4fr 1fr;
+  min-height: 60px;
+  background-color: rgb(252, 252, 252);
+  padding: 0 24px;
+}
+.topline {
+  background-color: #545454;
+  height: 9px;
+  display: flex;
+}
+
+header a {
+  color: #000000;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+.link-1 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.link-2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение ссылок */
+  align-items: flex-start; /* Выравнивание по левому краю */
+  justify-content: center; /* Выравнивание по вертикали внутри секции */
+  gap: 7px; /* Промежуток между ссылками */
+  flex-wrap: wrap;
+}
+
+.header-center {
+  display: flex;
+  justify-content: flex-end; /* Центрируем элементы в этой секции */
+  align-items: center;
+  gap: 7px 50px;
+  flex-wrap: wrap;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Выравнивание по правому краю */
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+
+/*======================================================*/
+.footer {
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+.zum_anfang {
+  width: 100%;
+  font-family: var;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  display: flex;
+  justify-content: end;
+  margin: 20px auto auto auto;
+}
+
+button{
+  width: 24px;
+  height: 24px;
+  color: white;
+  background-color: red;
+  border: none;
+  margin: 4px 24px auto 6px;
+}
+
+.menu_blocks {
+  width: 100%;
+  min-height: 374px;
+  font-family: var;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+
+.block {
+  min-width: 149.59px;
+  min-height: 279px;
+  top: 46px;
+  left: 114px;
+  overflow-wrap: break-word; 
+  font-family: var;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  padding: 17px 10px 0px 0px;
+
+  /*border: 1px solid;*/
+}
+
+.touren{
+  margin: 0px 12px auto 114px;
+}
+
+.info {
+    margin: 0px 12px auto 0;
+}
+
+.sehenswürdigkeit{
+    margin: 0px 12px auto 0;
+}
+
+insider {
+    margin: 0px 12px auto 0;  
+}
+
+.unterkünfte{
+    margin: 0px 12px auto 0;  
+}
+
+.brandenburg{
+  margin: 0px 12px auto 0;
+}
+
+.block > div {
+  margin: 8px auto auto 0;
+  
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+}
+
+/*================================================*/
+
+footer {
+  background-color: #545454; /* Серый цвет фона */
+  padding: 0 120px;
+  height: 483px; /* Высота футера */
+  display: flex; /* Включаем Flexbox для всего футера */
+  flex-direction: column;
+  align-items: center; /* Центрируем содержимое вертикально */
+  justify-content: center; /* Центрируем содержимое горизонтально */
+  color: white; /* Белый цвет текста */
+  text-align: center; /* Выравнивание текста в колонках по центру */
+
+}
+/* Контейнер футера */
+.footer-container {
+  display: flex;
+  
+  flex-wrap: wrap; /* Включаем Flexbox */
+  justify-content: space-between; /* Распределяем колонки равномерно */
+  align-items: flex-start; /* Выравниваем колонки сверху */
+  width: 100%; /* Используем всю ширину футера */
+  max-width: 1200px; /* Ограничиваем ширину контента */
+  padding: 0 20px; /* Отступы от краёв */
+  gap: 20px; /* Пространство между колонками */
+
+ 
+}
+/* Каждая колонка футера */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1; /* Все колонки равной ширины */
+  /* margin: 10px; Отступы внутри колонок */
+  font-size: 16px; /* Размер шрифта текста */
+}
+/* Адаптивность для небольших экранов */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column; /* Переключаемся на вертикальную компоновку */
+      align-items: center; /* Центрируем колонки */
+  }
+  .footer-column {
+      width: 100%; /* Ширина колонок — 100% */
+      margin: 5px 0; /* Вертикальные отступы */
+      text-align: left; /* Текст выравнивается по центру */
+  }
+
+}
+.footer-column {
+  width: 100%; /* Колонки занимают всю ширину */
+  text-align: left; /* Для всех колонок сохраняется выравнивание слева */
+  margin: 5px 0; /* Уменьшаем отступы */
+ 
+  
+}
+
+.footer-column a:hover { 
+  /* color: #DDDDDD;  */
+  color: white;
+  text-decoration: none;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+.footer-text {
+
+  display: flex;
+  align-items: flex-start; /* Выравнивание содержимого по верхнему краю */
+  justify-content: flex-start; /* Выравнивание содержимого по левому краю */
+  flex-direction: row;
+  text-align: left; /* Выравнивание текста внутри блока */
+  width: 100%; /* Убедитесь, что элемент занимает всю ширину */
+  margin-top: 4em;
+  margin-left: 4em;
+  padding: 10px 20px; /* Добавьте отступы для лучшей читабельности */
+}
+
