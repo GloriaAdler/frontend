@@ -4,8 +4,6 @@ const btn = document.getElementById("magic-btn");
 const clonedBtn = btn.cloneNode(true);
 // задали id
 clonedBtn.id = "magic-btn-2";
-
-//======
 clonedBtn.textContent='Я изменю тебя';
 
 btn.addEventListener('click', () => {

@@ -1,0 +1,22 @@
+form{
+    width: 50%; /* width: 50%;: Задает ширину формы в 50% от ее контейнера .input_box: */
+}
+
+.input_box{
+    width: 50%; /* width: 50%;: Задает ширину элементов .input_box внутри формы в 50% от ее контейнера. */
+    outline: 0; /* outline: 0;: Удаляет контур вокруг элементов ввода при фокусировке. */
+}
+
+#form_save+label{
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+    border-radius:26px;
+    background-color: #95a5a6;
+    position: relative;
+}
+
+#form_save:checked{
+    background-color: #27ae60;
+}
+ 
