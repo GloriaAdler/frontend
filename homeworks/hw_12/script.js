@@ -44,3 +44,80 @@ for (let i = 0; i < numbers.length; i++) {
 console.log('Задание 4 исходный массив=>', numbers)
 console.log('Задание 4 новый массив, где каждый элемент исходного массива возведен в квадрат=>', squaredNumbers)
 
+
+
+//проверка ДЗ и решение другими способами
+
+const namesNew = ["Мария", "Алексей", "Елена", "Дмитрий"]
+const agesNew = [22, 31, 45, 53]
+
+const result = []
+
+for (let i = 0; i < namesNew.length; i++) {
+    result.push(`${namesNew[i]} ${agesNew[i]} лет/годов`); // шаблонная строка
+    // result.push(namesNew[i] + " " + agesNew[i] + " лет/годов"); // конкатенация
+  }
+  
+  // for (const i in namesNew) {
+  //     result.push(`${namesNew[i]} ${agesNew[i]} лет/годов`);
+  // }
+  // for (const name of namesNew) {
+  //     console.log(name);
+  // }
+  
+  console.log(result);
+  console.log(result[0]);
+  
+  // 2
+  
+  const resultReverse = [];
+  
+  for (let i = result.length - 1; i >= 0; i--) {
+    resultReverse.push(result[i]);
+  }
+  
+  const resultReverseMethod = result.reverse();
+  
+  console.log(resultReverse);
+  console.log(resultReverseMethod);
+  
+  // 3 
+  
+  const countriesNew = [];
+  countries.push("Франция", "Германия", "Италия");
+  
+  const italy = countriesNew.pop();
+  countriesNew.unshift(italy);
+  
+  console.log(countriesNew);
+  
+  // 4
+  
+  const numbersNew = [1, 2, 3, 4, 5];
+  const newNumbers = [];
+  
+  for (const i in numbersNew) {
+      console.log(numbersNew[i] * 2);
+      newNumbers.push(numbersNew[i] ** 2); // Math.pow(numbersNew[i], 2)
+      // newNumbers[i] = (numbersNew[i] * numbersNew[i])
+  
+  }
+
+//поверхностное копирование (чтение информации)
+const arr1 = [1, 2, 3];
+const arr1Copy = arr1;
+
+arr1Copy [0] = 1000;
+
+console.log(arr1);
+console.log(arr1Copy);
+
+//глубокое копирование
+
+const arr = [1, 2, 3];
+const arrCopy = [...arr]; //spread
+
+arrCopy [0] = 1000;
+
+console.log(arr);
+console.log(arrCopy);
