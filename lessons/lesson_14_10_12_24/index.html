@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>lesson_14</title>
+</head>
+<body>
+    <section id="create">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <button onclick="createAccount()">Create new account</button> 
+        <button onclick="showAccounts()">Show all accounts</button>
+    </section>
+
+    <section id="show">
+        <!-- ul - unordered list - ненумерованный список (маркированный - точки) -->
+        <!-- ol - ordered list - нумерованный список (маркированный - 1 2 3 и т.д.) -->
+        <ol id="accountList">
+            <!-- il - list item - элемент списка -->
+        </ol>
+
+    </section>
+
+    <section id="change">
+        <label for="accountId">Account ID:</label>
+        <input type="text" id="accountId">
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount"> <!--type="number" - не смотря на тип, будет извлечено всё что введено, т.к. input это всегда строка, а  number значит, что могут быть вставлены цифры и точка/запятая, для отделения целых чисел -->
+
+        <!-- обработчик событий Event Listener -->
+        <button id="deposit">Deposit</button>
+        <button id="withdraw" >Withdraw</button>
+    </section>
+    
+</body>
+</html>

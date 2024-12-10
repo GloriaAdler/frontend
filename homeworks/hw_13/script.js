@@ -53,7 +53,34 @@ bankAccount.withdraw(0); // списание суммы равной 0
 bankAccount.checkBalance(); // проверка баланса после списания
 
 
+//==========================================рассмотрение ДЗ на уроке=======================================================
+let bankAccount1 = {
+    accountNumber1: "123456789",
+    accountHolderName1: "Alice",
+    balance1: 0
+}
 
+bankAccount1.deposit = function (sum) {
+    sum >= 5 && sum<= 5000 ? this.balance1 += sum : alert ("Некорректная сумма пополнения")
+}
+
+bankAccount1.withdraw = function(sum){
+    sum <= this.balance1 && sum > 0 ? this.balance1 -= sum : alert ("Некорректная сумма списания.")
+}
+
+//просмотр баланса
+bankAccount1.checkBalance = function (){
+    console.log(`Баланс Вашего аккаунта равен: ${this.balance1}`);
+}
+
+//Уведомление (встроено в инструмент JS и отражается в браузере в виде всплывающего окна)
+alert("Привет из модального окна");
+// Подтверждение/Отказ (Boolean)
+let answer = confirm("Вы действительно хотите закрыть страницу ?");
+console.log(answer);
+// Ответ (String | null)
+answer = prompt("Введите Ваше имя ?");
+console.log(answer);
 
 
 
