@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>lesson_15</title>
+</head>
+<body>
+    
+    <section id="create">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <button onclick="createAccount()">Create new account</button> 
+        <button onclick="showAccounts()">Show all accounts</button>
+    </section>
+
+    <section id="show">
+       
+        <ol id="accountList">
+            <!-- il - list item - элемент списка -->
+        </ol>
+    </section>
+
+    <section id="change">
+        <label for="accountId">Account ID:</label>
+        <input type="text" id="accountId">
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount">   <!-- value - string! -->
+
+        <!-- обработчик событий Event Listener -->
+        <button id="deposit">Deposit</button>
+        <button id="withdraw" >Withdraw</button>
+    </section>
+
+</body>
+</html>
