@@ -44,15 +44,30 @@ function createAccount() {
     console.log(bank);
 }
 
-//кнопка для показа всех введенных аккаунтов
+//кнопка для показа всех введенных аккаунтов, а также добавление функции удаления каждой строки из сформированного списка
 function showAccounts() {
 
-    const accountList = document.getElementById('accountList');
-    accountList.innerHTML = '';
+    const accountList = document.getElementById('accountList'); //получаем элемент <ol id="accountList"> в HTML
+    accountList.innerHTML = '';//очищаем список, чтобы не дублировался, после каждого формирования списка
    
-    bank.forEach((account, index) => {
-        accountList.innerHTML += `<li>${index + 1}. ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}</li>`;
-    })
+    bank.forEach((account, index) => { //Проходим по массиву bank; account это аккаунт, index его порядковый номер
+
+        const listItem = document.createElement('li');//создаем новый элемент списка 'li'
+        listItem.textContent = `${index + 1}. ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}`; // Текст для вывода на экран с веденным именем и сформированными номером, ID и балансом
+
+        // Создаем кнопку "Delete"
+        const deleteButton = document.createElement('button'); 
+        deleteButton.textContent = 'Delete'; //текст на кнопке удаления - 'Delete'
+        deleteButton.onclick = function () {//добавляем обработку для кнопки удаления
+            bank.splice(index, 1); //метод splice удаляет аккаунт из массива "bank", удаление будет по индексу. один индекс - это один элемент
+            showAccounts(); // обновляем список после удаления
+
+    };
+
+    listItem.appendChild(deleteButton); // Добавляем кнопку в каждый элемент списка
+        accountList.appendChild(listItem); // Добавляем элемент списка li уже вместе с кнопкой в список ol
+    });
+
 }
 
 const deposit = document.getElementById('deposit');
@@ -114,3 +129,4 @@ withdraw.onclick = function() {
     console.log(bank);
    
 }
+

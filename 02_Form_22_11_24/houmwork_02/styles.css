@@ -1,0 +1,50 @@
+body {
+    background-color: whitesmoke;
+    margin: 0; /*внешний отступ*/
+    padding: 0; /*внутренний отступ*/
+    
+    position: relative;
+    height: 60vh;
+}
+body::before {
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ширина страницы - 100% экрана */
+    height: 50%; /* Высота страницы - 100% экрана */
+
+    background-image: url('images/background.jpg'); /*путь до картинки*/
+    background-size:cover; /*масштабирование картинки - на весь экран*/
+    background-repeat: no-repeat; /*картинка вставляется только один раз без повторов*/
+    background-position: center; /* Картинка центрируется */
+
+    filter: blur(5px); /*замутнение фоновой картинки*/
+    z-index: -1; /*текст перед картинкой, текст будет расположен по настройкам картинки*/
+}
+
+h1 {
+    color: black; /* Цвет текста */
+    font-family: cursive; /*шрифт*/
+    text-align: center; /* Текст по центру */
+    padding-top: 15%; /* Отступ текста сверху */
+}
+
+h2 {
+    height: 10%;
+    color: black; /* Цвет текста */
+    font-family: Georgia, 'Times New Roman', Times, serif;/*шрифт*/
+    text-align: center; /* Текст по центру */
+    padding-top: 15%; /* Отступ текста сверху */
+}
+
+form {
+    width: 80%;
+    margin: 0 auto; 
+    max-width: 400px;
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(5, 5, 5, 5); 
+    font-family: Georgia, 'Times New Roman', Times, serif;/*шрифт*/
+}

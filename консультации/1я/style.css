@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+
+p{
+    font-size: 15px;
+}
+
+#big_font_size{
+    font-size: 35px;
+}
+
+.milk_products .milk .bottle_of_milk{
+    
+}
+
+.flex{
+    width: 150px;
+    height: 150px;
+    border: 2px solid;
+    margin: 20px; /*внешний отступ одинаковый со всех сторон*/
+    box-sizing: ;
+}
+
+.container{
+    display: flex;/*отражение на экране по горизонтали*/
+    flex-wrap: wrap; /*перенос на новую строку*/
+    position: relative;
+}
+
+.red_text{
+    color: red;
+}
+
+.position{
+    position: absolute;
+    top: 190px;
+    left: 96px;
+}

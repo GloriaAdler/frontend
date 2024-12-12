@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <link rel="stylesheet" href="styles.css"> <!--ссылка на картинку-->
+</head>
+
+<body>
+    <h1>Sports club "Stars Gymnastics"</h1>
+   
+    <h2>Registration form:</h2>
+    <form>
+        <div> <!--ввод имени-->
+            <label for="name">Name</label>
+            <input
+                id="name" type="text" placeholder="Enter your name..." required/>
+        </div>
+
+        <br/>
+
+        <div> <!--ввод э/п-->
+            <label for="email">Email</label>
+            <input
+                id="email" type="email" placeholder="Enter your email..." required/>
+        </div>
+
+        <br/>
+        
+        <div> <!--ввод пароля с ограничениями по кол-ву знаков-->
+            <label for="password">Password</label>
+            <input
+                id="password" type="password" placeholder="Enter your password..." minlength="8" maxlength="16" required/>
+        </div>
+
+        <br/> 
+
+        <div> <!--выбор вида спорта-->
+            <label for="sports">Sports</label>
+            <select id="Sports" required>
+                <option value=""> Choose your sport </option> <!--строчка с ПУСТЫМ значением-->
+                <option value="Rhythmic gymnastics"> Rhythmic gymnastics </option> 
+                <option value="Athletic gymnastics"> Athletic gymnastics </option>
+                <option value="Acrobatics"> Acrobatics </option>
+        </div>
+
+        <br/> 
+
+        <div> <!--выбор кол-ва тренировок в неделю-->
+            <label for="Quantity">Number of workouts per week</label>
+            <select id="Quantity" required>
+            <option value="1"> 1 </option> 
+            <option value="2"> 2 </option> 
+            <option value="3"> 3 </option> 
+            <option value="4"> 4 </option> 
+            <option value="5"> 5 </option> 
+            <option value="6"> 6 </option> 
+            <option value="7"> 7 </option> 
+        </div>
+
+        <br/> 
+
+        <div> <!--выбор даты из календаря-->
+            <label for = "day">When would you like to start</label>
+            <input
+                id="day"
+                type="date"
+                min="2024-11-26"
+                required>
+        </div>
+
+        <br/>
+
+        <div> <!--ввод возраста в опр.формате-->
+            <label for = "ege">Age</label>
+            <input
+                id="ege"
+                title="DD-MM-YYYY"
+                type="text" 
+                placeholder="DD-MM-YYYY" 
+                pattern="[0-9]{2}-[0-9]{2}-19[2-9]\d|20[0-2]\d|202[0-4]" 
+                required>
+        </div>
+
+        <br />
+
+        <div>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="male"/>
+
+            <label for="female">Female</label>
+            <input id="female" type="radio" name="gender" value="female"/>
+        </div>
+
+        <br /> <!-- дает отступ -->
+
+        <div>
+            <label for="agree"> <a href="https://de.wikipedia.org/wiki/Datenschutz" target="_blank">I agree...</a></label>
+            <input
+                id="agree"
+                type="checkbox"  
+
+                required
+                
+            />
+        </div>
+        
+
+        <br /> 
+
+        <button type="reset">Reset</button> <!--кнопка перезапуска формы-->
+        <button type="submit">Finish</button> <!--кнопка финиша-->
+
+    </form>
+    
+</body>
+</html>

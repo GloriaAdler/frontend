@@ -1,0 +1,69 @@
+body{
+    background-color: black; /*фоновый цвет*/
+}
+
+div{
+    width: 600px; /* Ширина контейнера */
+    height: 400px; /* Высота контейнера */
+    background-image: url("./img/bg.jpg"); /*фоновое изображение */
+    background-size: cover; /*Полное покрытие*/
+    background-position: center; /*Расположение по центру*/
+    position: relative; /* Относительное позиционирование для управления расположением дочерних элементов */
+    margin: 30px auto; /*Внешние отступы*/
+    border: 3px solid white;/*рамка*/
+}
+
+.planet-1{
+    position: absolute;
+    top: 18px;
+    left: 190px;
+    width: auto;
+    height: auto;
+}
+
+.planet-2 {
+    position: absolute;
+    top: 58px;
+    left: 50px;
+    width: auto;
+    height: auto;
+}
+.planet-3 {
+    position: absolute;
+    top: 140px;
+    left: 141px;
+    width: auto;
+    height: auto;
+}
+
+.asteroid {
+    position: absolute;
+    top: 70px;
+    right: 100px;
+    width: auto;
+    height: auto;
+}
+
+.spaceship {
+    position: absolute;
+    top: 170px;
+    left: 140px;
+    width: auto;
+    height: auto;
+}
+
+.ufo {
+    position: absolute;
+    bottom: 50px;
+    left: 110px;
+    width: auto;
+    height: auto;
+}
+
+.superman {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    width: auto;
+    height: auto;
+}

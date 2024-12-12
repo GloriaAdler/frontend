@@ -1,0 +1,54 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; /*выравнивание по вертикали*/
+    height: 100vh;/* 100% (100) относительно видимой части экрана (vh - viewport height) */
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.slider-container{
+    width: 80%; /*80%  от блока body*/
+    max-width: 600px;
+    overflow: hidden;/*убирает прокрутку по горизонтали*/
+    position: relative;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+.slider-track{
+    display: flex;
+}
+
+.slider-item{
+    min-width: 100%;
+    box-sizing: border-box;/*подсчет*/
+}
+
+.slider-item img{ /*настройки только для картинок внутри контейнера*/
+    width: 100%; /*картинка подстроится под свой контейнер*/
+    border-radius: 8px;
+}
+
+.slider-controls{
+    position: absolute; /*absolute задан только потому, что в контейнере-родителе (slider-container) задан position: relative*/
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /*разделили/расположили наши кнопки < и > по разным сторонам картинки*/
+    transform: translateY(-50%); /*можно устанавливать как хочется кнопки по горизонтали, вертикали и тд*/
+}
+
+.control{
+    background-color: rgba(0, 0, 0, 0.1); /*последний элемент это прозрачность*/
+    color: #fff; /*чисто белый цвет*/
+    border: none;
+    font-size: 20px;
+    padding: 10px;/*отступ от <> до рамки в которой они находятся*/
+    cursor: pointer; /*рука*/
+    border-radius: 50%;
+}
+
+.control:hover{ /* hover изменяет элемент при наведении мышки*/
+    background-color: rgba(0, 0, 0, 0.5)
+}

@@ -1,0 +1,123 @@
+<!-- 2я строка говорит о том, что пользуемся последней версией html, шаблон кода вызывается нажатием "!"" и выбором "1 !""-->
+<!DOCTYPE html>
+<html lang="en"> <!-- html lang="en" -(маркер для браузера)- говорит о том, что используется английский язык, здесь мы сами можем задать язык, в любом случае браузер автоматически предложит перевод сайта на язык ПК у пользователя-->>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <style>
+        h1{
+            text-align: center;
+        }
+    </style> -->
+    <!-- 
+    ./ - команда, которая говорит о том, что остаемся в той же папке
+    ../ - команда, которая говорит о том, что нужно выйти во внешнюю папку
+     -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Form</title>
+  </head>
+  <!-- 1. где будет задаваться стилистика?
+   - Inline-styles - будет задаваться в той же строке, где и сам элемент. Можно вписать в h
+   - Отдельный тег style
+   - отдельный файл (.css)
+   2. С помощью чего будут выбираться элементы для настройки (selector)?
+   - с помощью имени тега.
+   - с помощью значения любого атрибута (class, id - через #)
+
+    -->
+  <body> <!--  style="text-align: center;" - можно вписать в тег h1, а можно и в head-->
+    <h1 >Signup Form</h1>
+    <form>
+        <!-- Дефолтный блочный элемент - div -->
+        <!-- Дефолтный строчный элемент - span-->
+        <div>
+            <label for="name">Name</label>
+            <input
+                id="name"
+                type="text"
+                placeholder="Enter your name..."
+                required
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="email">Email</label>
+            <input
+                id="email"
+                type="email"
+                placeholder="Enter your email..."
+                required
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="phone">Phone</label>
+            <input
+                id="phone"
+                title="Example: +49-111-111-111-11"
+                type="tel"
+                placeholder="Example: +49-111-111-111-11"
+                pattern="\+?[0-9]{3}-?[0-9]{3}-?[0-9]{3}-?[0-9]{3}-?[0-9]{2}"
+                required
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="password">Password</label>
+            <input
+                id="password"
+                type="password"
+                placeholder="Enter your password..."
+                minlength="8"
+                maxlength="16"
+                required
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="hobby">hobby</label>
+            <select id="hobby" required>
+                <option value=""> Choose your hobby:</option>  <!--строчка с ПУСТЫМ значением - подсказка о том что нужно сделать. Выбрать эту строчку невозможно, т.к. нет значения-->
+                <option value="Chess"> Chess - best sport from all over the world!</option>               
+                <option value="football"> Football - best sport from all over the world!</option>                              
+                <option value="no"> No in this list!</option>                              
+                
+            </select>
+        </div>
+
+        <br />
+
+        <div>
+            <label for="agree">I agree...</label>
+            <input
+                id="agree"
+                type="checkbox"          
+                required
+            />
+        </div>
+
+        <br />
+
+        <div>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="male"/>
+
+            <label for="female">Female</label>
+            <input id="female" type="radio" name="gender" value="female"/>
+        </div>
+
+        <br />
+           
+        <button class="reset" type="reset">Reset</button>
+        <button class="submit" type="submit">Finish</button>
+    </form>
+  </body>
+</html>

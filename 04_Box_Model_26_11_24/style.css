@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/* если поставить *{ то будут настроены все элементы страницы*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500; /*вместо слова <weight> нужно вписать ширину шрифта*/
+  font-style: normal;
+}
+
+/*настройка фонового изображения*/
+.header {
+  height: 400px; /*высота отступа для картинки*/
+  background-image: url("./images/Coffee.jpg"); /*чтобы выбрать ссылку на картинку нужно нажать ./ тогда появиться путь до нужного файла*/
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Covered By Your Grace", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 100px;
+  padding-top: 120px;
+  color: rgba(3, 150, 100, 0.75);
+}
+
+.main {
+  position: relative;
+}
+
+/* top, left, right, bottom */
+
+.left, .middle, .right {
+  position: absolute;
+  width: 32%;
+  top: 15px;
+}
+
+.left {
+  left: 15px;
+}
+
+.middle {
+  left: 34%;
+  right: 33.3%;
+
+}
+
+.right {
+  right: 15px;
+}
+
+
