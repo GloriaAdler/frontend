@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(245, 252, 252);
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+button{
+    margin: 30px;
+    padding: 10px;
+    background-color: rgb(215, 237, 230);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(180, 237, 237);
+}
+
+.gallery{
+    background-color: rgb(230, 234, 237);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    width: 100%;
+    
+    padding: 20px;
+}
+
+img{
+    border: 1px solid #cac7c7;
+    border-radius: 5px;
+    width: 320px;
+    height: auto;
+}
+
+.character-img{
+    margin: 30px;
+}
+
+h1{
+    margin:  30px;
+}
+
+h2,  p{
+    margin:  0px  10px  0px 20px;
+    font-size: 15px;
+}
