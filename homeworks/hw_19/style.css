@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 5px;
+    background-color: rgb(236, 234, 230);
+}
+
+h1{
+    margin: 20px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.price-product {
+    font-weight: 1000;
+    color: rgb(169, 107, 107);
+
+}
+
+.grid-products{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px; /*отодвинули карточки друг от друга*/
+   
+}
+
+.product-card{
+    border-radius: 10px;
+    border: 1px solid rgb(197, 196, 196);
+    padding: 20px 30px;  /*отодвинули контент внутри каждой карточки*/
+    border-radius: 8px;
+}
+
+.img-wrapper {
+    /* жестко задаем значение для контейнера по вертикали */
+    width: 80%;
+    height: 200px;
+    
+}
+
+.img-wrapper > img{
+    width: 100%;
+    height: 100%;
+    /*задаем contain, чтобы уместить картинку в контейнере */
+    object-fit: contain;
+}
+  
+  

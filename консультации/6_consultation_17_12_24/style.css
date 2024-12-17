@@ -1,0 +1,75 @@
+/*  *-обращение ко всей странице */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* NAV MENU */
+header {
+  display: flex;
+  background-color: #ffe44d;
+  justify-content: space-between; /* располагаем LOGO и меню на две частиЮ начало и середина*/
+  align-items: center; /* смещение LOGO в центр по вертикали */
+  padding: 20px 60px;
+  font-size: 20px;
+}
+
+ul {
+  display: flex; /* расположили по горизонтали меню */
+  gap: 40px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.burger_icon {
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 3px 10px;
+  cursor: pointer;
+  display: none; /* скрыли/вырвали из потока бугрен иконку, все элементы сдвинулись */
+}
+
+header a {
+  text-decoration: none; /* убрали подчеркивание */
+  color: black; /* цвет ссылок сделали черным */
+}
+
+@media (max-width: 800px) {
+  /* когда экран достигнет ширины 800px то настройки хедера будут изменены... */
+  header {
+    position: relative;
+  }
+  .burger_icon {
+    display: block; /* появиться иконка - бургер */
+  }
+  ul {
+    flex-direction: column; /* направление меню измениться и они встанут друг под друга по вертикали*/
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    background-color: #ffe44d;
+    gap: 20px;
+    width: 120px;
+    transform: translateX(100%); /* скрываем меню максимально вправо */
+    transition: 0.5s; /* задержка во времени во время сдвига */
+  }
+
+  ul.nav_active {
+    transform: translateX(0);
+  }
+
+  ul li {
+    border-bottom: 1px solid black;
+    padding: 15px;
+  }
+}
+
+/*  */
+/*  */
