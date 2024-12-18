@@ -1,0 +1,64 @@
+ *{ /*убираем стандартные отступы */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh; /* весь экран */
+    overflow: hidden; /*если фон превышает размер экрана, Убирается прокрутка */
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.sosyalciniz.net/wp-content/uploads/2021/12/dunya-haritasi-dilsiz.png');
+    background-size: cover;
+    background-repeat: no-repeat; /* фоновая картинка одна на весь экран */
+    background-position: center; /* фоновая картинка расположена по центру */
+    filter: blur(8px); /* размытие только для фона */
+    z-index: -1; /*фон на задний план контента */
+}
+
+header {
+    text-align: center; /* Центрируем заголовок */
+    margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+.weatherOfCity {
+    flex: 1; /* Занимаем всё доступное пространство */
+    display: flex; 
+    justify-content: center; /* по горизонтали по центру */
+    align-items: start; /*по вертикали сверху*/
+}
+
+
+img{
+    width: 100%; /*100% относительно карточки */
+}
+
+.weather-card{
+    border-radius: 10px;
+    border: 1px solid rgb(189, 188, 188);
+    padding: 20px 30px;  
+    width: 50%;
+    background-color: rgb(225, 240, 246);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /*тень*/
+    
+}
+
+.city{
+    font-size: 30px;
+}
+
+h1{
+    margin: 20px;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+}

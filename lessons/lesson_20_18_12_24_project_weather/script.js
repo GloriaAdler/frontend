@@ -1,77 +1,80 @@
-// https://get.geojs.io/v1/ip/geo.json
-// киньте fetch по адресу и получите данные по широте (latitude), долготе (longitude) и городу
-// сделайте используя async / await асинхронные функции
-// cсылки на api в чате zoom
-
-// сделайте fetch запрос по адресу:
-// https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true
-// https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true
-// вам нужно заменить координаты в строке на данные выше
-// получите данные погоды: температуру, скорость ветра и.т.д
-// также заберите weathercode - он вам понадобится
-
-const address = document.querySelector("#addressOfCity");
+const meteo = document.querySelector("#weatherOfCity");
 
 async function getWeather() {
+  //! шаг 1
   //данные о местоположении
   const res = await fetch("https://get.geojs.io/v1/ip/geo.json");
   const data = await res.json();
 
-  //*работа с данными из объекта без деструктуризация
-  //объявили переменные и присвоили им значения из объекта
-  //   const city = data.city
-  //   const latitude = data.latitude
-  //   const longitude = data.longitude
-  //*работа с данными из объекта с деструктуризацией
-  //мы в одну строчку объявляем переменные с именами совпадающими с именем нужным нам ключей и передаем им соответствующие значения
-  //   const {city, latitude, longitude} = data
-  //   console.log(city, latitude, longitude)
-
   //карточка для отображения данных
   const card = document.createElement("div");
+  card.className = "weather-card"; //класс для css
   //широта
   const lat = document.createElement("p");
-  lat.textContent = `Latitude: ${data.latitude}`;
+  //lat.textContent = `Latitude: ${data.latitude}`; //вывод на экран
+  console.log(`Latitude: ${data.latitude}`); //вывод в консоль
   //долгота
   const lon = document.createElement("p");
-  lon.textContent = `Longitude: ${data.longitude}`;
+  //lon.textContent = `Longitude: ${data.longitude}`; //вывод на экран
+  console.log(`Longitude: ${data.longitude}`); //вывод в консоль
+
   //название города
   const city = document.createElement("p");
+  city.className = 'city' //класс для css
   city.textContent = `City: ${data.city}`;
-  //добавляем все полученные элементы в карточку
-  card.append(lat, lon, city);
 
+  //выводим название города
+  card.append(city);
+
+  //! шаг 2
   //используем координаты для получения данных о погоде
   const latitude = data.latitude; // Широта из первого запроса
   const longitude = data.longitude; // долгота из первого запроса
   //запрос данных о погоде
-  const resWeather = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`); //чтобы ссылка по второму запросу сработала, как динамическая, нужно заменить кавычки на косые, а фиксированные координаты сделать через ${...} динамическими
+  const resWeather = await fetch(
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
+  ); //чтобы ссылка по второму запросу сработала, как динамическая, нужно заменить кавычки на косые, а фиксированные координаты сделать через ${...} динамическими
   const weatherData = await resWeather.json();
 
   // данные о температуре
   const temperature = document.createElement("p");
-  temperature.textContent = `Temperature: ${weatherData.current_weather.temperature}°C`;
-  
+  temperature.textContent = `Temperature: ${weatherData.current_weather.temperature} °C`;
+
   //данные о скорости ветра
   const windSpeed = document.createElement("p");
   windSpeed.textContent = `Wind Speed: ${weatherData.current_weather.windspeed} km/h`;
-  
+
   //направление ветра
   const windDirection = document.createElement("p");
   windDirection.textContent = `Wind direction: ${weatherData.current_weather.winddirection}°`;
 
+  //! шаг 3
   //код, вместо кода отражение описания
   const weatherCode = weatherData.current_weather.weathercode;
   const weatherDescription = document.createElement("p");
-  weatherDescription.textContent = `Weather: ${getWeatherDescription(weatherCode)}`;
+  weatherDescription.textContent = `Weather: ${getWeatherDescription(
+    weatherCode
+  )}`;
 
+  // Получение и добавление изображения города
+  const cityImageUrl = await getCityImage(data.city);
+  if (cityImageUrl) {
+    const cityImage = document.createElement("img");
+    cityImage.src = cityImageUrl;
+    cityImage.alt = `${data.city} image`;
+    card.append(cityImage); //добавили в карточку
+  }
+
+  //! шаг 4
   // Добавляем данные о погоде в карточку
   card.append(temperature, windSpeed, windDirection, weatherDescription);
+
   //добавляем карточку на страницу
-  address.append(card);
+  meteo.append(card);
 }
 getWeather();
 
+//документацию Open-Meteo Weather Codes для расшифровки кода погоды
 function getWeatherDescription(code) {
   const descriptions = {
     0: "Clear sky",
@@ -102,8 +105,26 @@ function getWeatherDescription(code) {
     95: "Thunderstorm: Slight or moderate",
     96: "Thunderstorm with slight hail",
     99: "Thunderstorm with heavy hail",
-     
   };
   return descriptions[code] || "Unknown weather code"; // если не будет кода, то будет сообщение о неизвестном коде
 }
 
+//функция для запроса картинки с изображением города, который определился
+async function getCityImage(cityName) {
+  const accessKey = "92DMhXgITKLD76_C8ec4rHbDP1RPpr33Q6uV9kkK0aI"; //Access Key c unsplash.com
+
+  const url = `https://api.unsplash.com/search/photos?query=${cityName}&client_id=${accessKey}&orientation=landscape`;
+
+  try {
+    //обработка возможных ошибок
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.results.length > 0) {
+      return data.results[0].urls.small; // URL первой картинки
+    }
+    return null; // Если нет результатов
+  } catch (error) {
+    console.error("Error fetching city image:", error);
+    return null;
+  }
+}
