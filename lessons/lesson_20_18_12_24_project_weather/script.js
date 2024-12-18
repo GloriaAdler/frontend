@@ -58,7 +58,7 @@ async function getWeather() {
   
   //направление ветра
   const windDirection = document.createElement("p");
-  windDirection.textContent = `Wind direction: ${weatherData.current_weather.windDirection}`;
+  windDirection.textContent = `Wind direction: ${weatherData.current_weather.winddirection}°`;
 
   //код, вместо кода отражение описания
   const weatherCode = weatherData.current_weather.weathercode;
